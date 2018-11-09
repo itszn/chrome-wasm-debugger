@@ -1,0 +1,22 @@
+{
+  "name": "WASM debugger",
+  "description": "Debug WASM code",
+  "version": "0.7",
+  "permissions": [
+    "debugger"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "debuggerPause.png",
+    "default_title": "Pause JavaScript"
+  },
+  "content_scripts": [{
+      "matches": ["http://*/*","https://*/*"],
+      "run_at": "document_start",
+      "js": ["hook_loader.js"]
+  }],
+  "web_accessible_resources": ["hook.js"],
+  "manifest_version": 2
+}
