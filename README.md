@@ -10,6 +10,7 @@ The main feature is the easy of reading module memory.
 - Click the extension icon to open the debugger
 - Reload the page you want to debug. The debugger should say it loaded some wasm functions
 - Now you can set breakpoints in the debugger
+- Refreshing the original page will keep breakpoints and rerun the wasm
 
 ### Features
 - `i f` to get a list of functions
@@ -18,9 +19,11 @@ The main feature is the easy of reading module memory.
 - `si` Single step
 - `c` Continue execution
 - `x/<num>[bhw][xd] <address>` Examine memory like gdb. Must be broken to use.
+- Printing stack values on step
 
 ### Limitiations
 - Many
+- Cannot see locals
 - Currently only works for a single page. If you change debug targets you will have to reload the plugin
 - Cannot catch crashes
 - Not sure how it would handle thread stuff but might be ok
